@@ -1,0 +1,30 @@
+nav.extend > *:first-child{
+	display: inline-block;
+	cursor: pointer;
+	user-select: none;
+	-moz-user-select: none;
+	transition: transform .5s;
+	font-size: 2em;
+	transform: rotate(0deg);
+}
+nav.extend > a{
+	display: none;
+	position: relative;
+	opacity: 0;
+	padding: 0 1em 0 1em;
+	text-decoration: none;
+	color: #777;
+}
+
+nav.extend.open > *:first-child{
+	transform: rotate(45deg);
+}
+nav.extend.open > a{
+	display: inline-block;
+	animation: open 1s forwards;
+}
+
+@keyframes open {
+    0% {left:-2em; opacity:0;}
+    100% {left:0; opacity:1;}
+}
